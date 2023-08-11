@@ -27,3 +27,32 @@ function sayHello2() {
 sayHello(sayHello2);
 
 sayHello2();
+
+//! Calback hell
+
+const userList = () => {
+  console.log('kullanıcı listesi');
+};
+
+const productList = () => {
+  console.log('ürün listesi');
+};
+
+const priceList = () => {
+  console.log('fiyat listesi');
+};
+
+function dataList(waitTime, callback) {
+  setTimeout(function () {
+    callback();
+  }, waitTime * 1000);
+}
+dataList(1, function () {
+  userList();
+  dataList(2, function () {
+    productList();
+    dataList(3, function () {
+      priceList();
+    });
+  });
+});
