@@ -89,28 +89,38 @@ const priceList = () => {
 
 //! Javasicript async/await
 
-const dataList = (waitTime, callback) => {
-  return new Promise(function (resolve, reject) {
-    setTimeout(() => {
-      if (callback) {
-        resolve(callback());
-      } else {
-        reject();
-      }
-    }, waitTime * 1000);
-  });
-};
+// const dataList = (waitTime, callback) => {
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//       if (callback) {
+//         resolve(callback());
+//       } else {
+//         reject();
+//       }
+//     }, waitTime * 1000);
+//   });
+// };
 
-const executeDataList = async () => {
-  try {
-    await dataList(1, userList);
-    await dataList(2, productList);
-    await dataList(3, priceList);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log('İşlem Tamamalndı');
-  }
-};
+// const executeDataList = async () => {
+//   try {
+//     await dataList(1, userList);
+//     await dataList(2, productList);
+//     await dataList(3, priceList);
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//     console.log('İşlem Tamamalndı');
+//   }
+// };
 
-executeDataList();
+// executeDataList();
+
+//?---------------------------
+//?---------------------------
+//?---------------------------
+
+//! Javasicript AJAX
+
+// const xhr = new XMLHttpRequest();
+
+// console.log(xhr);
