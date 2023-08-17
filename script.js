@@ -121,6 +121,24 @@ const priceList = () => {
 
 //! Javasicript AJAX
 
-// const xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 
-// console.log(xhr);
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    const data = JSON.parse(xhr.responseText);
+    myFunction(data);
+  }
+};
+
+xhr.send();
+
+function myFunction(userList) {
+  const data = userList.map((user) => user.name);
+  console.log(data);
+}
+
+//?---------------------------
+//?---------------------------
+//?---------------------------
