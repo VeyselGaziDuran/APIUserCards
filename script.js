@@ -121,20 +121,34 @@ const priceList = () => {
 
 //! AJAX ile xhr nesnesi oluşturup asenkron veri alma
 
-const xhr = new XMLHttpRequest();
+// const xhr = new XMLHttpRequest();
 
-xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
 
-xhr.onload = function () {
-  if (xhr.status === 200) {
-    const data = JSON.parse(xhr.responseText);
-    myFunction(data);
-  }
-};
+// xhr.onload = function () {
+//   if (xhr.status === 200) {
+//     const data = JSON.parse(xhr.responseText);
+//     myFunction(data);
+//   }
+// };
 
-xhr.send();
+// xhr.send();
 
-function myFunction(userList) {
-  const data = userList.map((user) => user.name);
-  console.log(data);
+// function myFunction(userList) {
+//   const data = userList.map((user) => user.name);
+//   console.log(data);
+// }
+
+// //?---------------------------
+// //?---------------------------
+// //?---------------------------
+
+//! fetch ile veri çekme
+
+function getUserData() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
+
+getUserData();
