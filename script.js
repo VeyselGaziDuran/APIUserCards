@@ -119,7 +119,7 @@ const priceList = () => {
 //?---------------------------
 //?---------------------------
 
-//! Javasicript AJAX
+//! AJAX ile xhr nesnesi oluşturup asenkron veri alma
 
 const xhr = new XMLHttpRequest();
 
@@ -138,7 +138,3 @@ function myFunction(userList) {
   const data = userList.map((user) => user.name);
   console.log(data);
 }
-
-//?---------------------------
-//?---------------------------
-//?---------------------------
